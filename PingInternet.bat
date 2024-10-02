@@ -33,17 +33,38 @@ for /l %%i in (1,1,%total%) do (
         )
     )
     cls
+    echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    echo ::                                                           ::
+    echo ::  ##     ## ########     ###    ##    ## ########  ####    ::
+    echo ::  ###   ### ##     ##   ## ##   ###   ## ##     ##  ##     ::
+    echo ::  #### #### ##     ##  ##   ##  ####  ## ##     ##  ##     ::
+    echo ::  ## ### ## ########  ##     ## ## ## ## ##     ##  ##     ::
+    echo ::  ##     ## ##   ##   ######### ##  #### ##     ##  ##     ::
+    echo ::  ##     ## ##    ##  ##     ## ##   ### ##     ##  ##     ::
+    echo ::  ##     ## ##     ## ##     ## ##    ## ########  ####    ::
+    echo ::                                                           ::
+    echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     echo %INTERNETCHECKER% [!progressbar!] !percent!%%
     timeout /t %speedduration% /nobreak >nul
 )
 
 cls
-
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo ::                                                           ::
+echo ::  ##     ## ########     ###    ##    ## ########  ####    ::
+echo ::  ###   ### ##     ##   ## ##   ###   ## ##     ##  ##     ::
+echo ::  #### #### ##     ##  ##   ##  ####  ## ##     ##  ##     ::
+echo ::  ## ### ## ########  ##     ## ## ## ## ##     ##  ##     ::
+echo ::  ##     ## ##   ##   ######### ##  #### ##     ##  ##     ::
+echo ::  ##     ## ##    ##  ##     ## ##   ### ##     ##  ##     ::
+echo ::  ##     ## ##     ## ##     ## ##    ## ########  ####    ::
+echo ::                                                           ::
+echo :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 @REM CHECK IF THE INTERNET CONNECTION IS AVAILABLE
 if %errorlevel% neq 0 (
     echo %ERROR% Internet connection is not available.
     pause
-    exit /b 1
+    exit
 ) else (
     echo %INFO% Internet connection is available.
     echo.
@@ -79,6 +100,7 @@ for %%i in (%pinglist%) do (
     )
 )
 
+@REM And Done Successfully Pinged Servers
 timeout /t 2 /nobreak >nul
 
 echo.
